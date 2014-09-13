@@ -8,7 +8,8 @@
 		- Reasoning as search
 			- Heuristics
 			- Combinatorial Explosion
-		- The Right Answer vs The Best Answer
+			- The best vs the right answer
+		- Structure
 
 	Neurons
 		- Biological neuron, basic parts
@@ -51,9 +52,31 @@
 		- When presented with a set of possibilities, try the one that looks the most promising
 
 [game tree image]
-	But then there is another problem: that of combinatorial explosion. While using heuristics can help cut down the number of evaluations necessary to find some goal, sometimes the search space is just too huge. For example, given an average of about 35 possible moves in a given chess position, and an average game length of 80 moves, the number of positions one would have to examine in order to difinitively know the best opening move is about 35^80, or about 3.3 * 10^123. To put this in perspective, the number of atoms in the observable universe is estimated to be on the order of 10^80.
+	But then there is another problem: that of combinatorial explosion. In chess, for example, there are an average of about 35 possible moves in any position, and an average game length of about 80 moves. So the number of positions one would have to examine in order to difinitively know the best opening move is about 35^80, or about 3.3 * 10^123. To put this in perspective, the number of atoms in the observable universe is estimated to be on the order of 10^80.
+
+	So, given the size of the search space in chess, and the fact that, in order to be sure a move is the best, one has to eliminate all possibilities, a search heuristic is not enough. Here, a value function is required. Since it is, practically speaking, impossible to reach the bottom nodes of a chess search tree, one must find a way to weigh the value of positions before reaching the end, and use that value to guess what the best move in a given position will be.
+
+	Unfortunately, this approach fails to solve the problem of finding the correct move given a position. The goal instead becomes finding the best move, given finite available resources.
 </pre>
+	<h5>Structure and Learning</h5>
+<pre>
+[image of a king-and-rook endgame]
+	Suppose, however, that chess positions had a set of defineable properties. Suppose that there was a known algorithm for winning any position in which one player has a king and a rook, and the other player has only a king. In this case, all the possible positions with this structure become equivalent, for the purposes of winning the game. Now, given any chess position we could ask two yes-or-no questions (in chess, both players must always have kings):
+	"Does one player have exactly a rook?"
+	"Does the other player have no pieces left?"
+	And if the answer to both questions is yes, then we can stop our search, and evaluate that node as winning for the player with the rook.
+
+	By finding structure in a search space, it's possible to massively reduce the scale of a problem. And, really, this is the very purpose of science: by finding structure in our physical world, we are able to solve problems that are otherwise far too complex to fathom. And, in fact, the heuristics and value functions defined in the last section do the very same thing: they take advantage of the known structure of a problem space in order to search more efficiently (heuristic search), or to make a guess about some part of the search space (value function).
+
+[image of a Go board] [image of a chess position] [stock trader image?] [maybe one more problem image]
+	But, of course, the structure of one problem is seldom the same in another. And for many interesting problems, we don't know much of anything about their structure. This is where learning comes into play. By designing algorithms that learn about the structure of a problem, we take steps in the direction of true, generalized AI. This is what philosophers often refer to as "hard AI".
+</pre>
+
+<!-- Section two -->
 <h4>Neurons</h4>
+<pre>
+	And so, it seems natural to look to the one system we know of that's capable of finding structure in any arbitrary problem: the brain.
+<pre>
 <img src="http://upload.wikimedia.org/wikipedia/commons/3/30/Chemical_synapse_schema_cropped.jpg"> </img>
 <pre>
 	Neurons are cells in the brain that perform an electrical function: they receive electrical signals via dendrites, and output electrical signals via axons. The connections between two neurons are called synapses. 
