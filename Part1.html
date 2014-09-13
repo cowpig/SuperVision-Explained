@@ -4,6 +4,12 @@
 <body>
 	<h3>Neural Networks Explained</h3>
 <pre>
+	Artificial Intelligence
+		- Reasoning as search
+			- Heuristics
+			- Combinatorial Explosion
+		- The Right Answer vs The Best Answer
+
 	Neurons
 		- Biological neuron, basic parts
 		- Electrical potentials added up
@@ -26,6 +32,30 @@
 
 </pre>
 
+<!-- SECTION ONE -->
+<h4>Artificial Intelligence</h4>
 <pre>
+[photo of alan turing] [photo of john von neumann]
+	In 1936, Alan Turing (and, simultaneously, Alonzo Church) proved that any function which could be computed at all could be computed by any basic computer, given enough time-steps and memory. This implies that any physical system, subject to the laws of nature, can be simulated by a sufficiently powerful computer. And, barring dualism[footnote], this means that whatever our brains are doing a computer can theoretically replicate.
+</pre>
+	<h5>Reasoning as Search</h5>
+<pre>
+[Image of a Maze]
+	Any AI problem can be framed as a search problem. Just like solving a maze (search through every combination of turns), proving a theorem (searching through the combinations of prepositions that can be deduced from given starting axioms), or playing chess (searching through tree of moves, followed by opposing moves, etc). This can even be applied to more abstract AI problems, such as signal processing: searching through a space of possible functions that best extracts the relevant information from some input signal.
+
+	Early AI typically attacked this problem with a simple paradigm:
+		- Proceeded step by step towards some goal
+		- If stuck, go back a step and try something different
+
+	This kind of approach is known as brute-force search. The problem, of course, is that it can be very slow. So to make things more efficient, sometimes a heuristic is added:
+		- When presented with a set of possibilities, try the one that looks the most promising
+
+[game tree image]
+	But then there is another problem: that of combinatorial explosion. While using heuristics can help cut down the number of evaluations necessary to find some goal, sometimes the search space is just too huge. For example, given an average of about 35 possible moves in a given chess position, and an average game length of 80 moves, the number of positions one would have to examine in order to difinitively know the best opening move is about 35^80, or about 3.3 * 10^123. To put this in perspective, the number of atoms in the observable universe is estimated to be on the order of 10^80.
+</pre>
+<h4>Neurons</h4>
+<img src="http://upload.wikimedia.org/wikipedia/commons/3/30/Chemical_synapse_schema_cropped.jpg"> </img>
+<pre>
+	Neurons are cells in the brain that perform an electrical function: they receive electrical signals via dendrites, and output electrical signals via axons. The connections between two neurons are called synapses. 
 </body>
 </html>
