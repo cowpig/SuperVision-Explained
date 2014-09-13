@@ -5,22 +5,21 @@
 	<h3>Academic Paper Explained: </h3> <h4>ImageNet Classification with Deep Convolutional
 Neural Networks</h4>
 <pre>
-	Context
-		- Image classification is hard
-		- Traditionally done by passing a heavily pre-processed image into some classifier
-
-	Neural Networks
+	Background Knowledge
+		- Image classification typically done by passing a heavily pre-processed image into some classifier
 		- How a neural network works
-		- Transforming an inputs into linearly separable classes 
+		- Transforming inputs into linearly separable classes 
 		- Why depth matters
 		- How a convolutional neural network works
 
-	SuperVision
+	Introduction
+		- Image classification is hard
 		- The competition, dataset
 		- SuperVision's performance
 		- Discussion of results and why they're so special
-	
-	Technical Details
+
+	The Paper's Technical Details
+		- Architecture
 		- ReLUs and saturation -- need to talk to someone about the intuition behind this
 		- Local Response Normalization -- I believe this is across the same kernels adjacent in image-space
 		- Using GPUs for training -- paralellization of matrix operations, powers of two...
@@ -29,6 +28,13 @@ Neural Networks</h4>
 
 	Some kind of conclusion, perhaps?
 </pre>
+
+<pre>
+	Image classification is a difficult problem. While humans seem to have a pretty easy time doing it, getting a computer to do so is another story entirely. Take the following image of a grumpy cat, for example:
+	[grumpy cat image]
+	That image is rather similar to the following, to the human eye:
+	[grumpy cat horizontal reflection]
+	However, it turns out that these two images have very little in common with one another, pixel-by-pixel. 
 
 </body>
 </html>
